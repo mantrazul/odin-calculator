@@ -11,22 +11,22 @@ function addDisplay() {
     let calcString = ""
     screen = document.querySelector(".screen-helper");
     screen.textContent += this.value;
-    screen.textContent = calcString
 }
 
 
-endgame.addEventListener('click', process, false)
+endgame.addEventListener('click', process)
 
 //variables
 
+
 function process() {
-    screen = document.querySelector(".equal")
+    screen = document.querySelector(".screen-helper")
     screenString = screen.textContent
 
-    procs = screenString.split(/[.\-=/_]/)
+    procs = screenString.split('+')
     let num1 = procs[0]
-    let num2 = procs[2]
-    let operator = procs[1]
+    let num2 = procs[1]
+    let operator = "+"
 
     Operator(num1, operator, num2)
 }
@@ -43,8 +43,9 @@ function Operator(num1, operator, num2) {
 
 
 function add(a, b) {
-    let result = a + b
-    return console.log(result)
+    let result = parseInt(a) + parseInt(b)
+    screen = document.querySelector(".screen-helper")
+    screen.textContent = result
 }
 
 // function minus(a, b) {
