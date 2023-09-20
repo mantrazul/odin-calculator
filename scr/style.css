@@ -338,7 +338,7 @@ html {
     display: none;
   }
 
-  .body {
+.body {
     display: flex;
     justify-content: center;
     align-content: center;
