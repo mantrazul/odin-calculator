@@ -1,13 +1,12 @@
 * {
-  border: red solid 1px;
   margin: 0;
 }
 
 :root {
-  --background: #ee8282;
-  --primary: #f5f5f5;
+  --background: #000000;
+  --primary: #ffffff;
   --secondary: #f5f5f5;
-  --shadow: #f5f5f5;
+  --shadow: #000000;
 }
 
 html,body {
@@ -25,6 +24,7 @@ html,body {
 }
 
 .number-body {
+  box-shadow: 10px 10px;
   display: flex;
   flex: 1 1 auto;
   flex-direction: row;
@@ -35,11 +35,14 @@ html,body {
   width: 300px;
   height: 300px;
   padding: 30px;
+  padding-bottom: 50px;
 }
 
 button {
   width: 60px;
   height: 60px;
+  border-radius: 30px;
+  border: #000000 1px solid;
 }
 
 button:hover {
