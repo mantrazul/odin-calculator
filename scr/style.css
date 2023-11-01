@@ -54,3 +54,20 @@ button:hover {
 #last-button {
   width: 125px;
 }
+
+.screen-helper,
+.result {
+  padding: 10px;
+  text-align: right;
+}
+
+
+.wrapper {
+  box-shadow: 10px 10px;
+  background-color: rgb(243, 240, 202);
+
+}
+
+.screen {
+  background-color: rgb(25, 38, 85);
+}
