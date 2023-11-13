@@ -84,6 +84,8 @@ button:active {
 .result {
   padding: 10px;
   text-align: right;
+  height: 40px;
+  width: 300px;
 
 }
 
