@@ -140,3 +140,31 @@ button:active {
   color: var(--secondary);
   box-shadow: rgb(184, 105, 31) 0px 4px;
 }
+
+footer {
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  z-index: 10;
+  background-color: var(--true-screen);
+  height: max-content;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: var(--primary);
+}
+
+a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--screen);
+  text-decoration: none;
+}
+
+.title {
+  font-size: 2em;
+  color: var(--primary);
+}
