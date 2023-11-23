@@ -116,7 +116,12 @@ function equal() {
                 result = a * b;
                 break;
             case '/':
-                result = a / b;
+                if (a % b !== 0) {
+                    result = (a / b).toFixed(2);
+                }
+                else {
+                    result = a / b;
+                }
                 break;
         }
 
