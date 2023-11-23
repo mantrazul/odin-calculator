@@ -99,7 +99,6 @@ function equal() {
     let a = Number(screenHelper.textContent);
     let b = Number(screenResult.textContent);
 
-    console.log(a, b, operator);
     if (a ===  0 || b === 0) {
         return
     }
