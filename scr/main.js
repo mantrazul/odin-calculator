@@ -100,6 +100,7 @@ function equal() {
     let b = Number(screenResult.textContent);
 
     if (a ===  0 || b === 0) {
+        clearBottom()
         return
     }
 
