@@ -1,5 +1,9 @@
 # odin-calculator
 
+
+## Published through github-pages
+Check it out [here] (https://mantrazul.github.io/odin-calculator/)
+
 ## Project Aim
 
 This project was created as a final test for the Foundations Course of Odin Project. It illustrates basic CSS, Javascript and HTML.
