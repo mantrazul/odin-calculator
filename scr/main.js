@@ -30,15 +30,18 @@ window.addEventListener('load', () => {
     clearScreen();
 });
 
-let operator
+let operator = "";
+let result
 
 document.addEventListener('keydown', (event) => {
     let key = event.key;
     if (isFinite(key)) {
         keyPress(key);
+        console.log(operator, "key")
     }
     else if (key === '+' || key === '-' || key === 'x' || key === '/') {
         operator = key;
+        console.log(operator)
         operation();
         keyBoardColorOperator();
     }
@@ -63,6 +66,10 @@ document.addEventListener('keydown', (event) => {
 });
 
 function keyPress(key) {
+
+    if (screenResult.textContent === '0') {
+        clearBottom();
+    }
     screenResult.textContent += key;
 }
 
@@ -75,9 +82,12 @@ function updateScreenHelper() {
     if (this.value === '0' && screenResult.innerText === '') {
         clearBottom();
     }
-    else {
-        screenResult.innerText += this.value;
+    else if (screenResult.innerText === '0') {
+        clearBottom();
+
     }
+    screenResult.innerText += this.value;
+
 
 }
 
@@ -86,17 +96,19 @@ function clearBottom() {
 }
 
 function operation() {
-    screenHelper.innerText = screenResult.innerText;
-    clearBottom();
-    
-    if (operator === undefined) {
+
+    if (operator === "") {
         operator = this.value;
     }
+
+    screenHelper.innerText = screenResult.innerText;
+    clearBottom();
 }
 
 function equal() {
     let a = Number(screenHelper.textContent);
     let b = Number(screenResult.textContent);
+    console.log(a, b, operator)
 
     if (a ===  0 || b === 0) {
         clearBottom()
@@ -104,7 +116,6 @@ function equal() {
     }
 
     else {
-        let result = 0;
         switch (operator) {
             case '+':
                 result = a + b;
@@ -127,7 +138,7 @@ function equal() {
 
         screenResult.innerText = result;
         screenHelper.innerText = '';
-        operator = undefined;
+        operator = "";
         removeColorOperator();
     }
 }
@@ -148,11 +159,13 @@ function deleteLast() {
 function colorOperator() {
 
     this.classList.add('active');
+
     if (this.classList.contains('active')) {
         operatorButton.forEach(button => {
             if (button !== this) {
                 button.classList.remove('active');
             }
+
         });
     }
 }
