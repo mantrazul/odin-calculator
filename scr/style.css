@@ -110,3 +110,33 @@ button:active {
   justify-content: space-around;
   row-gap: 20px;
 }
+
+.equal2 {
+  background-color: rgb(223, 53, 53);
+  color: var(--secondary);
+  box-shadow: rgb(83, 13, 13) 0px 4px;
+}
+
+.equal2:hover {
+  background-color: rgb(235, 83, 83);
+  color: var(--secondary);
+  box-shadow: rgb(83, 13, 13) 0px 4px;
+}
+
+.equal2:active {
+  background-color: rgb(150, 18, 18);
+  color: var(--secondary);
+  box-shadow: rgb(223, 53, 53) 0px 4px;
+}
+
+.active {
+  background-color: rgb(214, 151, 55);
+  color: var(--secondary);
+  box-shadow: rgb(184, 105, 31) 0px 4px;
+}
+
+.active:hover {
+  background-color: rgb(223, 176, 105);
+  color: var(--secondary);
+  box-shadow: rgb(184, 105, 31) 0px 4px;
+}

@@ -18,6 +18,7 @@ deleteButton.addEventListener('click', deleteLast);
 
 operatorButton.forEach(button => {
     button.addEventListener('click', operation);
+    button.addEventListener('click', colorOperator);
 });
 
 numberButtons.forEach(button => {
@@ -39,6 +40,7 @@ document.addEventListener('keydown', (event) => {
     else if (key === '+' || key === '-' || key === 'x' || key === '/') {
         operator = key;
         operation();
+        keyBoardColorOperator();
     }
 
     else {
@@ -87,10 +89,7 @@ function operation() {
     screenHelper.innerText = screenResult.innerText;
     clearBottom();
     
-    if (operator !== undefined) {
-        return
-    }
-    else {
+    if (operator === undefined) {
         operator = this.value;
     }
 }
@@ -124,6 +123,7 @@ function equal() {
         screenResult.innerText = result;
         screenHelper.innerText = '';
         operator = undefined;
+        removeColorOperator();
     }
 }
 
@@ -138,4 +138,41 @@ function pointCheck() {
 
 function deleteLast() {
     screenResult.innerText = screenResult.innerText.slice(0, -1);
+}
+
+function colorOperator() {
+
+    this.classList.add('active');
+    if (this.classList.contains('active')) {
+        operatorButton.forEach(button => {
+            if (button !== this) {
+                button.classList.remove('active');
+            }
+        });
+    }
+}
+
+function keyBoardColorOperator() {
+    removeColorOperator();
+    switch(operator) {
+        case '+':
+            operatorButton[0].classList.add('active');
+            console.log(operatorButton[0]);
+            break;
+        case '-':
+            operatorButton[1].classList.add('active');
+            break;
+        case '/':
+            operatorButton[2].classList.add('active');
+            break;
+        case 'x':
+            operatorButton[3].classList.add('active');
+            break;
+    }
+}
+
+function removeColorOperator() {
+    operatorButton.forEach(button => {
+        button.classList.remove('active');
+    });
 }
