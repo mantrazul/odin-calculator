@@ -2,7 +2,7 @@
 
 
 ## Published through github-pages
-Check it out [here] (https://mantrazul.github.io/odin-calculator/)
+Check it out [here](https://mantrazul.github.io/odin-calculator/)
 
 ## Project Aim
 
